@@ -6,8 +6,9 @@ router.get('/', userController.user_list_get);
 
 router.get('/:id', userController.user_get);
 
-router.post('/', (req, res)=>{
-  res.send('With this endpoint you can add users.')
+router.post('/', (req, res, next)=>{
+  console.log(req.body)
+  res.json(req.body)
 });
 
 router.put('/', (req, res)=>{
